@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Enquirie
 # from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import ensure_csrf_cookie
 import json
 
 # @csrf_exempt
+@ensure_csrf_cookie
 # Create your views here.
 def index(request):
     return render(request, "index.html")
